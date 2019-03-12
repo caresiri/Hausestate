@@ -67,12 +67,6 @@ map.on('load', function() {
 
 </script>
    
-       if (maxRings > 1) {
-        for (let j = 0; j < polygons.length; j++) {
-            if (polygons[j].length <= maxRings) continue;
-            quickselect(polygons[j], maxRings, 1, polygons[j].length - 1, compareAreas);
-            polygons[j] = polygons[j].slice(0, maxRings);
-        }
 
 <div id='list'>
 <?xml version="1.0" encoding="UTF-8"?>
