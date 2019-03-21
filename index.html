@@ -12,19 +12,42 @@
 <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.css' rel='stylesheet' />
 </head>
 <header>
-   <img src="photos/top.jpg" style="width: 100%; height: 100%;"/>
+   <img src="photos/header.jpg" style="width: 100%; height: 100%;"/>
 </header>
 <body>
+
 <div id='map'></div>
+
+<div id='menu'>
+<input id='cjsdspr7h1iih1frl4xs6hlnj' type='radio' name='rtoggle' value='seguridad' checked='checked'>
+<label for='seguridad'>seguridad</label>
+<input id='cjtgqa4vm06pd1fpdpuewmmky' type='radio' name='rtoggle' value='edad'>
+<label for='edad'>edad</label>
+</div>
+
 <div class='map-overlay' id='legend'></div>
+
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiY2FyZXNpcmkiLCJhIjoiY2pxMXE3OGRxMTA2NDQ4cDV4MTlyOWE2bSJ9.51s32vFR23z-SIQm9NrV_Q';
-const map = new mapboxgl.Map({
+var map = new mapboxgl.Map({
 container: 'map',
 style: 'mapbox://styles/caresiri/cjsdspr7h1iih1frl4xs6hlnj',
 center: [-84.107,9.941],
 zoom: 15.0
 });
+
+var layerList = document.getElementById('menu');
+var inputs = layerList.getElementsByTagName('input');
+
+function switchLayer(layer) {
+var layerId = layer.target.id;
+map.setStyle('mapbox://styles/caresiri/' + layerId);
+}
+
+for (var i = 0; i < inputs.length; i++) {
+inputs[i].onclick = switchLayer;
+}
+
 
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
@@ -66,7 +89,6 @@ map.on('load', function() {
 
 
 </script>
-   
 
 <div id='list'>
 <?xml version="1.0" encoding="UTF-8"?>
@@ -409,7 +431,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax41.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax41.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>41</td>
                <td>-84.1040647</td>
                <td>9.9389569</td>
@@ -417,7 +439,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax42.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax42.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>42</td>
                <td>-84.1009191</td>
                <td>9.9407865</td>
@@ -425,7 +447,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax43.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax43.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>43</td>
                <td>-84.1005671</td>
                <td>9.9414833</td>
@@ -433,7 +455,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax44.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax44.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>44</td>
                <td>-84.1004997</td>
                <td>9.942338</td>
@@ -441,7 +463,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax45.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax45.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>45</td>
                <td>-84.1012122</td>
                <td>9.9398473</td>
@@ -449,7 +471,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax46.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax46.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>46</td>
                <td>-84.1012202</td>
                <td>9.9394596</td>
@@ -457,7 +479,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax47.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax47.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>47</td>
                <td>-84.1018412</td>
                <td>9.9400107</td>
@@ -465,7 +487,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax48.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax48.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>48</td>
                <td>-84.1111018</td>
                <td>9.9406854</td>
@@ -473,7 +495,7 @@ map.on('load', function() {
                <td>SJ</td>
          </tr>
          <tr>
-               <td><img src="photos/Casax49.1.jpg" style="width: 50%; height: 50%"/>_</td>
+               <td><img src="photos/Casax49.jpg" style="width: 50%; height: 50%"/>_</td>
                <td>49</td>
                <td>-84.1127762</td>
                <td>9.9421428</td>
