@@ -8,6 +8,8 @@ body { margin:0; padding:0; }
 #map { position:fixed; top:50px; right:0px; width:50%; height:100%;}
 #list { position:fixed; top:50px; bottom:0; width:50%; height:100%;left: 0px; overflow-y: scroll;}
 #header { position:fixed; top:0px; width:70%; height:70%;}
+#menu {position: fixed; top:50px; right:0px; background: #fff;padding: 10px;font-family: 'Open Sans', sans-serif;}
+
 table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
@@ -63,3 +65,4 @@ tr:nth-child(even) {
   height: 10px;
   margin-right: 5px;
 }
+
