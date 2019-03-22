@@ -36,30 +36,26 @@ center: [-84.107,9.941],
 zoom: 15.0
 });
 
+//switch layers
 var layerList = document.getElementById('menu');
 var inputs = layerList.getElementsByTagName('input');
-
 function switchLayer(layer) {
 var layerId = layer.target.id;
 map.setStyle('mapbox://styles/caresiri/' + layerId);
 }
-
 for (var i = 0; i < inputs.length; i++) {
 inputs[i].onclick = switchLayer;
 }
 
-
+//sabana norte's points
 map.on('click', function(e) {
   var features = map.queryRenderedFeatures(e.point, {
     layers: ['sabana-norte'] // replace this with the name of the layer
   });
-
   if (!features.length) {
     return;
   }
-
   var feature = features[0];
-
   var popup = new mapboxgl.Popup({ offset: [0, -15] })
     .setLngLat(feature.geometry.coordinates)
     .setHTML('<h3>' + feature.properties.name + '</h3><p>' + feature.properties.description + '</p>')
@@ -67,6 +63,7 @@ map.on('click', function(e) {
     .addTo(map);
 });
 
+//legend
 map.on('load', function() {
   // the rest of the code will go in here
   var layers = ['mas seguro', 'intermedio', 'menos seguro'];
@@ -78,7 +75,6 @@ map.on('load', function() {
   var key = document.createElement('span');
   key.className = 'legend-key';
   key.style.backgroundColor = color;
-
   var value = document.createElement('span');
   value.innerHTML = layer;
   item.appendChild(key);
@@ -86,8 +82,6 @@ map.on('load', function() {
   legend.appendChild(item);
 }
 });
-
-
 </script>
 
 <div id='list'>
